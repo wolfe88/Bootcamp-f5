@@ -35,7 +35,7 @@ ExploreNearby, turistlerin seyahat ederken gezebilecekleri yerler hakkında bilg
 - Sprint Notları: Sprint notları [product backlog](https://www.figma.com/file/QUQg0VWmtSZz1DRERvXCUH/Flowchart-%26-ToDo?type=whiteboard&node-id=0-1&t=UND6gCWeVwxV0eNq-0) içine yazılmıştır.
 - Sprint İçinde Tamamlanması Tahmin Edilen Puan: 
 - Puan Tamamlama Tahmin Mantığı:
-- Daily Scrumm: Daily scrum toplantıları çevrimiçi görüşme ile yapılmıştır. Toplantı özetleri ve notları [product backlog](https://www.figma.com/file/QUQg0VWmtSZz1DRERvXCUH/Flowchart-%26-ToDo?type=whiteboard&node-id=0-1&t=UND6gCWeVwxV0eNq-0) içine yazılmıştır.
+- Daily Scrum: Daily scrum toplantıları çevrimiçi görüşme ile yapılmıştır. Toplantı özetleri ve notları [product backlog](https://www.figma.com/file/QUQg0VWmtSZz1DRERvXCUH/Flowchart-%26-ToDo?type=whiteboard&node-id=0-1&t=UND6gCWeVwxV0eNq-0) içine yazılmıştır.
 - Sprint Board Updates:
 ## Sprint Review & Sprint Retrospective
 - Ürün Drurumu (Ekran Görüntüleri): 
@@ -47,7 +47,7 @@ ExploreNearby, turistlerin seyahat ederken gezebilecekleri yerler hakkında bilg
 - Sprint Notları: 
 - Sprint İçinde Tamamlanması Tahmin Edilen Puan:
 - Puan Tamamlama Tahmin Mantığı:
-- Daily Scrumm: 
+- Daily Scrum: 
 - Sprint Board Updates:
 ## Sprint Review & Sprint Retrospective
 - Ürün Durumu (Ekran Görüntüleri): 
@@ -59,7 +59,7 @@ ExploreNearby, turistlerin seyahat ederken gezebilecekleri yerler hakkında bilg
 - Sprint Notları: 
 - Sprint İçinde Tamamlanması Tahmin Edilen Puan:
 - Puan Tamamlama Tahmin Mantığı:
-- Daily Scrumm: 
+- Daily Scrum: 
 - Sprint Board Updates:
 ## Sprint Review & Sprint Retrospective
 - Ürün Durumu (Ekran Görüntüleri): 
