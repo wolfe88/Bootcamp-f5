@@ -38,7 +38,7 @@ ExploreNearby, turistlerin seyahat ederken gezebilecekleri yerler hakkında bilg
 - Daily Scrum: Daily scrum toplantıları çevrimiçi görüşme ile yapılmıştır. Toplantı özetleri ve notları [product backlog](https://www.figma.com/file/QUQg0VWmtSZz1DRERvXCUH/Flowchart-%26-ToDo?type=whiteboard&node-id=0-1&t=UND6gCWeVwxV0eNq-0) içine yazılmıştır.
 - Sprint Board Updates:
 ## Sprint Review & Sprint Retrospective
-- Ürün Drurumu:
+- Ürün Durumu:
 - Ekran Görüntüleri: 
 - Sprint Review:
 - Sprint Retrospective: 
