@@ -1,14 +1,24 @@
 import 'package:explore_nearby/constants/routes.dart';
+import 'package:explore_nearby/firebase_options.dart';
 import 'package:explore_nearby/pages/map_page.dart';
 import 'package:explore_nearby/pages/events_page.dart';
 import 'package:explore_nearby/pages/home_page.dart';
 import 'package:explore_nearby/pages/conversations_page.dart';
 import 'package:explore_nearby/pages/profile_page.dart';
 import 'package:explore_nearby/screens/home_screen.dart';
+import 'package:explore_nearby/screens/register_screen.dart';
 import 'package:explore_nearby/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() => runApp(BasePage());
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  runApp(BasePage());
+}
 
 class BasePage extends StatelessWidget {
   const BasePage({super.key});
@@ -21,7 +31,7 @@ class BasePage extends StatelessWidget {
         themeMode: ThemeMode.dark,
         debugShowCheckedModeBanner: false,
         title: "explore_nearby",
-        home: const HomeScreen(), //child appbar
+        home: const HomeScreen(),
         routes: {
           homepageRoute: (context) => const HomePage(),
           conversationspageRoute: (context) => const ConversationsPage(),

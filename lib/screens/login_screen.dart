@@ -1,127 +1,145 @@
 import 'package:flutter/material.dart';
-import 'package:explore_nearby/constants/routes.dart';
-// import 'package:social_academy/services/auth/auth_exceptions.dart';
-// import 'package:social_academy/services/auth/auth_provider.dart';
-// import 'package:social_academy/services/auth/auth_service.dart';
-import '../constants/routes.dart';
-import 'verify_email_screen.dart';
-import 'dart:developer' as devtools show log;
+import 'package:google_fonts/google_fonts.dart';
+import 'package:explore_nearby/screens/home_screen.dart';
+import 'package:explore_nearby/screens/register_screen.dart';
+import '../firebase/auth.dart';
 
-// import '../firebase_options.dart';
-// import '../utilities/show_error_dialog.dart';
-
-class LoginView extends StatefulWidget {
-  const LoginView({Key? key}) : super(key: key);
+class Login extends StatefulWidget {
+  const Login({super.key});
 
   @override
-  State<LoginView> createState() => _LoginViewState();
+  State<Login> createState() => _LoginState();
 }
 
-class _LoginViewState extends State<LoginView> {
-  late final TextEditingController _email;
-  late final TextEditingController _password;
+class _LoginState extends State<Login> {
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  String password = "";
+  String email = "";
+  final _auth = AuthRepository();
 
-  @override
-  void initState() {
-    _email = TextEditingController();
-    _password = TextEditingController();
-    super.initState();
+  void emailChange(String? value) {
+    setState(() {
+      email = value ?? "";
+    });
   }
 
-  @override
-  void dispose() {
-    _email.dispose();
-    _password.dispose();
-    super.dispose();
+  void passChange(String? value) {
+    setState(() {
+      password = value ?? "";
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Login"),
+        automaticallyImplyLeading: false,
         centerTitle: true,
-        titleTextStyle: const TextStyle(
-          fontSize: 30,
-          fontStyle: FontStyle.italic,
-          letterSpacing: 3,
+        title: Text(
+          'MeetUp',
+          style: GoogleFonts.viga(color: Colors.white, fontSize: 30),
         ),
       ),
-      body: Column(
-        children: [
-          TextField(
-            controller: _email,
-            decoration: const InputDecoration(
-              hintText: "something@some.thing",
-            ),
-            // obscureText: true,
-            enableSuggestions: false,
-            autocorrect: false,
-            keyboardType: TextInputType.emailAddress,
-          ),
-          TextField(
-            controller: _password,
-            obscureText: true,
-            enableSuggestions: false,
-            autocorrect: false,
-            keyboardType: TextInputType.visiblePassword,
-            decoration: const InputDecoration(
-              hintText: "Very secret password here",
-            ),
-          ),
-          TextButton(
-            onPressed: (() async {
-              final email = _email.text;
-              final password = _password.text;
-              Navigator.of(context)
-                  .pushNamedAndRemoveUntil(homepageRoute, (route) => false);
-            }),
-            //   try {
-            //     final userCredential = await AuthService.firebase().logIn(
-            //       email: email,
-            //       password: password,
-            //     );
-            //     final user = AuthService.firebase().currentUser;
-            //     if (user?.isEmailVerified ?? false) {
-            //       devtools.log(userCredential.toString());
-            //       Navigator.of(context)
-            //           .pushNamedAndRemoveUntil(messagesRoute, (route) => false);
-            //     } else {
-            //       Navigator.of(context).pushNamedAndRemoveUntil(
-            //           verifyEmailRoute, (route) => false);
-            //       showErrorDialog(context,
-            //           "Your email isn't verified. Please verify here.");
-            //     }
-            //   } on UserNotFoundAuthException catch (e) {
-            //     devtools.log("!user not found");
-            //     await showErrorDialog(
-            //       context,
-            //       "User not found.",
-            //     );
-            //   } on WrongPasswordAuthException {
-            //     await showErrorDialog(
-            //       context,
-            //       "Wrong password.",
-            //     );
-            //     devtools.log("!wrong password");
-            //   } on GenericAuthException {
-            //     devtools.log("Auth Error");
-            //     await showErrorDialog(
-            //       context,
-            //       "Something went wrong at authentication.",
-            //     );
-            //   }
-            // }),
-            child: const Text("Login Button"),
-          ),
-          TextButton(
-            onPressed: () {
-              Navigator.of(context)
-                  .pushNamedAndRemoveUntil(registerRoute, (route) => false);
-            },
-            child: const Text("Not registered yet? Register here!"),
-          )
-        ],
+      body: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Center(
+            child: Form(
+              key: _formKey,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Sign in',
+                    style: GoogleFonts.viga(fontSize: 20),
+                  ),
+                  const SizedBox(height: 20),
+                  TextFormField(
+                    decoration: const InputDecoration(labelText: 'Email'),
+                    cursorColor: const Color(0XFF01579B),
+                    autovalidateMode: AutovalidateMode.onUserInteraction,
+                    enableSuggestions: true,
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Enter an email';
+                      }
+                      return null;
+                    },
+                    onSaved: emailChange,
+                    autocorrect: true,
+                    keyboardType: TextInputType.emailAddress,
+                  ),
+                  TextFormField(
+                    decoration: const InputDecoration(labelText: 'Password'),
+                    cursorColor: Colors.lightBlueAccent,
+                    autovalidateMode: AutovalidateMode.onUserInteraction,
+                    enableSuggestions: false,
+                    obscureText: true,
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Enter a Password';
+                      }
+                      return null;
+                    },
+                    onSaved: passChange,
+                    autocorrect: false,
+                    keyboardType: TextInputType.text,
+                  ),
+                  const SizedBox(height: 10),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Text(
+                        "Don't have an account ",
+                        style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                          fontSize: 13,
+                        ),
+                      ),
+                      InkWell(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const Register()));
+                        },
+                        child: Text("Register Now",
+                            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                                fontSize: 13, color: const Color(0XFF00838F))),
+                      )
+                    ],
+                  ),
+                  const SizedBox(height: 50),
+                  Container(
+                    width: double.infinity,
+                    child: Container(
+                      margin: const EdgeInsets.only(right: 100, left: 100),
+                      child: ElevatedButton(
+                        onPressed: () async {
+                          if (_formKey.currentState!.validate()) {
+                            _formKey.currentState!.save();
+                            final res = await _auth.signInWithCredential(
+                                email, password, context);
+                            if (context.mounted) {
+                              if (res != null) {
+                                Navigator.pushReplacement(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => const HomeScreen()),
+                                );
+                              }
+                            }
+                          }
+                        },
+                        child: Text(
+                          'Sign In',
+                          style:
+                          GoogleFonts.viga(color: Colors.white, fontSize: 20),
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            )),
       ),
     );
   }

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "229592766294",
+    "project_id": "explore-nearby-b39c2",
+    "storage_bucket": "explore-nearby-b39c2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:229592766294:android:c9529221f5af78d53d68f7",
+        "android_client_info": {
+          "package_name": "com.yehancer.dev.explore_nearby"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "229592766294-94jeupj8mns4trj79kvfvlmc5t5hkb9d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANFsu9MFjvHYtFKVeChyM4ESghPzxa-ZY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "229592766294-94jeupj8mns4trj79kvfvlmc5t5hkb9d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

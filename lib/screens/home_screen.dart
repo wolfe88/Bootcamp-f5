@@ -1,15 +1,15 @@
+import 'package:explore_nearby/screens/login_screen.dart';
 import 'package:explore_nearby/utilities/helpers.dart';
 import 'package:explore_nearby/pages/map_page.dart';
-import 'package:explore_nearby/pages/events_page.dart';
 import 'package:explore_nearby/pages/home_page.dart';
-import 'package:explore_nearby/pages/conversations_page.dart';
 import 'package:explore_nearby/pages/profile_page.dart';
 import 'package:explore_nearby/theme.dart';
 import 'package:explore_nearby/widgets/widgets.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 
+import '../firebase/auth.dart';
 import '../widgets/avatar.dart';
 
 // int pageIndex0 = 0;
@@ -44,6 +44,10 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 
+  final _auth = AuthRepository();
+
+  final email =  FirebaseAuth.instance.currentUser!.email!;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -66,7 +70,24 @@ class _HomeScreenState extends State<HomeScreen> {
             );
           },
         ),
-        // actions:
+        actions: <Widget>[
+          Container(
+            margin: const EdgeInsets.only(top: 10),
+            child: IconButton(
+                icon: const Icon(
+                  Icons.logout,
+                  color: AppColors.iconLight,
+                  size: 30,
+                ),
+                onPressed: () async {
+                  await _auth.signOut();
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => const Login()),
+                  );
+                }),
+          )
+        ],
         leading: Padding(
           padding: const EdgeInsets.only(left: 18.0),
           child: IconButton(
