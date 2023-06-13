@@ -14,7 +14,6 @@ class AuthRepository {
       final credential = await _auth.signInWithEmailAndPassword(
         email: emailAddress,
         password: password,
-
       );
       return credential;
     } on FirebaseAuthException catch (e) {
@@ -44,9 +43,10 @@ class AuthRepository {
 
   Future<String> getCurrentUsersName() async {
     final currentUser = _auth.currentUser;
+    // ignore: unused_local_variable
     final uid = currentUser!.uid;
     final user = await _users.doc(currentUser.uid).get().then(
-            (value) => UserModel.fromMap(value.data() as Map<String, dynamic>));
+        (value) => UserModel.fromMap(value.data() as Map<String, dynamic>));
     return user.name;
   }
 
@@ -54,7 +54,7 @@ class AuthRepository {
     final currentUser = _auth.currentUser;
     final uid = currentUser!.uid;
     final user = await _users.doc(uid).get().then(
-            (value) => UserModel.fromMap(value.data() as Map<String, dynamic>));
+        (value) => UserModel.fromMap(value.data() as Map<String, dynamic>));
     return user.email;
   }
 
@@ -65,7 +65,7 @@ class AuthRepository {
 
   Future<UserModel?> getUserData(String uid) {
     return _users.doc(uid).get().then(
-            (value) => UserModel.fromMap(value.data() as Map<String, dynamic>));
+        (value) => UserModel.fromMap(value.data() as Map<String, dynamic>));
   }
 
   User? getCurrentUser() {
@@ -73,7 +73,7 @@ class AuthRepository {
   }
 
   Future<bool?> deleteUserFromAuth() async {
-    try{
+    try {
       User? user = _auth.currentUser;
 
       await user!.delete().then((value) {
@@ -82,12 +82,11 @@ class AuthRepository {
         print("an error ocurred while deleting user from auth. Error: $error ");
         return false;
       });
-    } catch(e){
+    } catch (e) {
       print(e.toString());
       return false;
     }
   }
-
 
   Future<void> signOut() async {
     await _auth.signOut();
