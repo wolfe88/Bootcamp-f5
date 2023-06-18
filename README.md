@@ -13,7 +13,7 @@ Flutter Team 5
 --ExploreNearby--
 
 ## Product Backlog URL
-[Flutter Team 5 Miro Backlog Cart](https://miro.com/app/board/uXjVM_qKFlc=/?share_link_id=90098972970)
+[Flutter Team 5 Miro Backlog Cart](https://miro.com/app/board/uXjVM_qKFlc=/?share_link_id=90098972970) - 
 [Flutter Team 5 Figma Backlog Chart](https://www.figma.com/file/QUQg0VWmtSZz1DRERvXCUH/Flowchart-%26-ToDo?type=whiteboard&node-id=1-239&t=UND6gCWeVwxV0eNq-0)
 
 ## Ürün Açıklaması
