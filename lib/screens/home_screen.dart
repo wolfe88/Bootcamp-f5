@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import
+
 import 'package:explore_nearby/screens/login_screen.dart';
 import 'package:explore_nearby/utilities/helpers.dart';
 import 'package:explore_nearby/pages/map_page.dart';
@@ -45,8 +47,6 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   final _auth = AuthRepository();
-
-  final email =  FirebaseAuth.instance.currentUser!.email!;
 
   @override
   Widget build(BuildContext context) {
@@ -159,7 +159,6 @@ class _BottomNavigationBarState extends State<_BottomNavigationBar> {
               onTap: handleItemSelected,
               isSelected: (selectedIndex == 0),
             ),
-
             _NavigationBarItem(
               label: "Harita",
               icon: CupertinoIcons.map,
@@ -167,7 +166,6 @@ class _BottomNavigationBarState extends State<_BottomNavigationBar> {
               onTap: handleItemSelected,
               isSelected: (selectedIndex == 1),
             ),
-
             _NavigationBarItem(
               label: "Profil",
               icon: CupertinoIcons.person,
