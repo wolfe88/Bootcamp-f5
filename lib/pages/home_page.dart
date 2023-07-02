@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 import 'package:explore_nearby/pages/search_page.dart';
+=======
+// ignore_for_file: unused_import
+
+>>>>>>> 5a76ed51f85c603868fbcbd413a77f25b50e9fa6
 import 'package:explore_nearby/theme.dart';
 import 'package:explore_nearby/yeni/mekan_card_detay.dart';
 import 'package:flutter/material.dart';

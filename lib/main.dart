@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import
+
 import 'package:explore_nearby/constants/routes.dart';
 import 'package:explore_nearby/firebase_options.dart';
 import 'package:explore_nearby/pages/favori_page.dart';

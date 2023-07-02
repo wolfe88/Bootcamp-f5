@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -16,25 +18,22 @@ class firestoreDB {
   // CollectionReference _activities;
   // CollectionReference _something;
   // CollectionReference _something;
-  Stream get CUprofile =>
-      _firestore
-          .collection("users")
-          .doc("$CUuid")
-          .snapshots(); // a stream that is continuously listening for changes happening in the users own document
+  Stream get CUprofile => _firestore
+      .collection("users")
+      .doc("$CUuid")
+      .snapshots(); // a stream that is continuously listening for changes happening in the users own document
 
   String firestoreValidator(String nick) {
     return "a";
   }
 
-
   Future<UserProfileModel>? getProfileFromUsername(uid) async {
     try {
       CollectionReference<Map<String, dynamic>> _users =
-      _firestore.collection('users');
+          _firestore.collection('users');
 
-      QuerySnapshot<Map<String, dynamic>> querySnapshot = await _users
-          .where("uid", isEqualTo: uid)
-          .get();
+      QuerySnapshot<Map<String, dynamic>> querySnapshot =
+          await _users.where("uid", isEqualTo: uid).get();
 
       if (querySnapshot.size > 0) {
         print(querySnapshot.docs[0].data().toString() + "this is first");
@@ -49,6 +48,5 @@ class firestoreDB {
       return UserProfileModel();
     }
   }
-
 }
 // Creating a simple Riverpod provider that provides an instance of our Database class so that it can be used from our UI(by calling Database class methods)
