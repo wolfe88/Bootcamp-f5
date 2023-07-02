@@ -1,4 +1,3 @@
-import 'dart:js_interop';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -152,13 +151,7 @@ class _RegisterState extends State<Register> {
                               _formKey.currentState!.save();
                               final res = await _auth.createUser(
                                   name, email, password,surname, context);
-                              if(!res.isNull){
-                                //go to profile create page
-                              } else {
-                                _auth.deleteUserFromAuth();
-                                // DB.deleteUserFromDb(); //will be created later
-                                //remove the username from docs and auth then show an error screen
-                              }
+                             
                               if (context.mounted) {
                                 if (res != null) {
                                   Navigator.pushReplacement(
