@@ -181,6 +181,7 @@ class _RegisterState extends State<Register> {
 }
 
 Future<String> firestoreValidator(String username) async {
+  // ignore: unused_local_variable
   var nicksCollection = FirebaseFirestore.instance.collection('nick_uid');
 
   return "a";
