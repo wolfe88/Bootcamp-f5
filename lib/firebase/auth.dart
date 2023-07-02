@@ -58,6 +58,14 @@ class AuthRepository {
     return user.email;
   }
 
+  Future<String> getCurrentUsersBio() async {
+    final currentUser = _auth.currentUser;
+    final uid = currentUser!.uid;
+    final user = await _users.doc(uid).get().then(
+         (value) => UserModel.fromMap(value.data() as Map<String, dynamic>));
+    return user.bio;
+  }
+
   Future<String> getCurrentUsersID() async {
     final currentUser = _auth.currentUser;
     return currentUser!.uid;
@@ -72,6 +80,7 @@ class AuthRepository {
     return _auth.currentUser;
   }
 
+  // ignore: body_might_complete_normally_nullable
   Future<bool?> deleteUserFromAuth() async {
     try {
       User? user = _auth.currentUser;
@@ -94,8 +103,8 @@ class AuthRepository {
 
   Stream<User?> get authStateChanges => _auth.authStateChanges();
 
-  Future<UserCredential?> createUser(String name, String emailAddress,
-      String password, String surname, BuildContext context) async {
+  Future<UserCredential?> createUser(String name, String surname, String emailAddress,
+      String password, BuildContext context) async {
     try {
       final credential = await _auth.createUserWithEmailAndPassword(
         email: emailAddress,
@@ -105,6 +114,7 @@ class AuthRepository {
       if (credential.additionalUserInfo?.isNewUser ?? false) {
         userModel = UserModel(
           name: name,
+          surname: surname,
           uid: credential.user!.uid,
           email: credential.user!.email!,
         );

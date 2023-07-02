@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import
+
 import 'package:explore_nearby/theme.dart';
 import 'package:flutter/material.dart';
 
