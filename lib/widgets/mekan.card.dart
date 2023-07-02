@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:explore_nearby/yeni/app_layout.dart';
 import 'package:explore_nearby/theme.dart';
 import 'package:flutter/cupertino.dart';

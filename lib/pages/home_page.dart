@@ -3,11 +3,9 @@ import 'package:explore_nearby/theme.dart';
 import 'package:explore_nearby/yeni/mekan_card_detay.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-
 import '../utilities/helpers.dart';
 import '../widgets/avatar.dart';
 import '../widgets/mekan.card.dart';
-import '../yeni/mekan_card_detay.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});

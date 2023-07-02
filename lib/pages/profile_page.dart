@@ -1,10 +1,14 @@
+import 'package:explore_nearby/constants/routes.dart';
 import 'package:explore_nearby/firebase/auth.dart';
+import 'package:explore_nearby/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../screens/home_screen.dart';
 import '../theme.dart';
 import '../utilities/helpers.dart';
 import '../widgets/avatar.dart';
+import 'package:sizer/sizer.dart';
+import 'package:getwidget/getwidget.dart';
 
 
 class ProfilePage extends StatefulWidget {
@@ -41,10 +45,23 @@ class _ProfilePageState extends State<ProfilePage> {
     });
   }*/
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        elevation: 2,
+        leading: IconButton(
+          icon:Icon(Icons.logout, color: Colors.red),
+          onPressed: (){
+            _currentUser.signOut();
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => const Login()),
+            );
+          },
+        ),
+      ),
       body: SafeArea(
         child: SingleChildScrollView(
           scrollDirection: Axis.vertical,
@@ -69,7 +86,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       children: [
                         Container(
                             padding: const EdgeInsets.all(20),
-                            child: Expanded(
+                            child: SingleChildScrollView(
                               child: Text(
                                 _userName,
                                 style: const TextStyle(
@@ -112,8 +129,6 @@ class _ProfilePageState extends State<ProfilePage> {
                           fontSize: 17,
                           color: AppColors.textLigth,
                         ),
-                        maxLines: 5,
-                        overflow: TextOverflow.ellipsis,
                         "Fusce scelerisque nunc non tincidunt porta. Quisque fringilla turpis vitae sapien dignissim, ut dapibus nisl egestas. Nunc aliquam gravida tellus, ut tempor dolor commodo suscipit. Morbi ac auctor leo, in aliquam ipsum. Maecenas sem arcu, vestibulum vel porttitor eu, auctor sit amet orci. Mauris feugiat dui eu augue porta, at pellentesque nulla dignissim. Proin semper libero ac lectus sollicitudin condimentum. Praesent at hendrerit neque. In viverra turpis vitae ante eleifend sollicitudin. Donec ut ullamcorper libero. Aliquam quis porta mauris, interdum maximus diam."
                         //_bio,
                       ),
@@ -220,6 +235,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     ),
                   ),
                 ),
+
               ]
           ),
         ),
