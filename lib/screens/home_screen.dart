@@ -1,30 +1,34 @@
-// ignore_for_file: unused_import
-
+import 'package:explore_nearby/pages/search_page.dart';
 import 'package:explore_nearby/screens/login_screen.dart';
 import 'package:explore_nearby/utilities/helpers.dart';
-import 'package:explore_nearby/pages/map_page.dart';
+import 'package:explore_nearby/pages/favori_page.dart';
 import 'package:explore_nearby/pages/home_page.dart';
 import 'package:explore_nearby/pages/profile_page.dart';
 import 'package:explore_nearby/theme.dart';
+import 'package:explore_nearby/widgets/mekan.card.dart';
 import 'package:explore_nearby/widgets/widgets.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 
 import '../firebase/auth.dart';
+import '../pages/mekan_page.dart';
 import '../widgets/avatar.dart';
 
 // int pageIndex0 = 0;
 
 final pages = [
   const HomePage(),
-  const MapPage(),
+  const MekanPage(),
+  const FavoriPage(),
   const ProfilePage(),
 ];
 
 final pageTitles = [
   "Home",
-  "Harita",
+  "Mekan Detay",
+  "Favoriler",
   "Profil",
 ];
 
@@ -51,64 +55,6 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        title: ValueListenableBuilder(
-          valueListenable: title,
-          builder: (context, value, child) {
-            return Text(
-              value,
-              style: const TextStyle(
-                letterSpacing: 1.4,
-                height: 1,
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-                fontSize: 18,
-              ),
-            );
-          },
-        ),
-        actions: <Widget>[
-          Container(
-            margin: const EdgeInsets.only(top: 10),
-            child: IconButton(
-                icon: const Icon(
-                  Icons.logout,
-                  color: AppColors.iconLight,
-                  size: 30,
-                ),
-                onPressed: () async {
-                  await _auth.signOut();
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(builder: (context) => const Login()),
-                  );
-                }),
-          )
-        ],
-        leading: Padding(
-          padding: const EdgeInsets.only(left: 18.0),
-          child: IconButton(
-            icon: Avatar.small(url: Helpers.randomPictureUrl()),
-            onPressed: () {},
-            splashRadius: 24,
-          ),
-        ),
-
-        // Align(
-        //   alignment: Alignment.centerRight,
-        //   child: IconButton(
-        //     icon: const Icon(Icons.search, color: Colors.white),
-        //     onPressed: () {},
-
-        //     // splashColor: Colors.red,
-        //     // highlightColor: Colors.red,
-        //     splashRadius: 24,
-        //   ),
-        // ),
-      ),
       body: ValueListenableBuilder(
         valueListenable: pageIndex,
         builder: (BuildContext context, int value, _) {
@@ -153,25 +99,32 @@ class _BottomNavigationBarState extends State<_BottomNavigationBar> {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             _NavigationBarItem(
-              label: "Home",
+              label: "Ana Sayfa",
               icon: CupertinoIcons.home,
               route: 0,
               onTap: handleItemSelected,
               isSelected: (selectedIndex == 0),
             ),
             _NavigationBarItem(
-              label: "Harita",
-              icon: CupertinoIcons.map,
+              label: "Mekan Detay",
+              icon: CupertinoIcons.square_favorites,
               route: 1,
               onTap: handleItemSelected,
               isSelected: (selectedIndex == 1),
             ),
             _NavigationBarItem(
-              label: "Profil",
-              icon: CupertinoIcons.person,
+              label: "Favoriler",
+              icon: IconData(0xee9b, fontFamily: 'MaterialIcons'),
               route: 2,
               onTap: handleItemSelected,
               isSelected: (selectedIndex == 2),
+            ),
+            _NavigationBarItem(
+              label: "Profil",
+              icon: CupertinoIcons.person,
+              route: 3,
+              onTap: handleItemSelected,
+              isSelected: (selectedIndex == 3),
             ),
           ],
         ));
