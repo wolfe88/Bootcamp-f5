@@ -1,9 +1,4 @@
-<<<<<<< HEAD
 import 'package:explore_nearby/pages/search_page.dart';
-=======
-// ignore_for_file: unused_import
-
->>>>>>> 5a76ed51f85c603868fbcbd413a77f25b50e9fa6
 import 'package:explore_nearby/screens/login_screen.dart';
 import 'package:explore_nearby/utilities/helpers.dart';
 import 'package:explore_nearby/pages/favori_page.dart';
