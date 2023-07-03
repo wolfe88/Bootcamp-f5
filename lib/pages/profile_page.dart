@@ -2,7 +2,7 @@ import 'package:explore_nearby/constants/routes.dart';
 import 'package:explore_nearby/firebase/auth.dart';
 import 'package:explore_nearby/screens/login_screen.dart';
 import 'package:flutter/material.dart';
-
+import '../firebase/firestoreDB.dart';
 import '../screens/home_screen.dart';
 import '../theme.dart';
 import '../utilities/helpers.dart';
@@ -23,6 +23,8 @@ class _ProfilePageState extends State<ProfilePage> {
   final AuthRepository _currentUser = AuthRepository();
   String _userName = '';
   //String _bio = '';
+
+  firestoreDB fireDB = firestoreDB();
 
   @override
   void initState() {
@@ -179,7 +181,9 @@ class _ProfilePageState extends State<ProfilePage> {
                             children: [
                               IconButton(
                                 icon: Image.asset("assets/images/anıtkabir.jpg"),
-                                onPressed: () { },
+                                onPressed: () async {
+                                 await fireDB.getPlaceFromID("bfMtis1g7XQz4V5Tss0H").then((value) => print(value?.name));
+                                },
                                 iconSize: 120,
                               ),
                               const Text(
