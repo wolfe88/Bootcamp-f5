@@ -50,6 +50,14 @@ class AuthRepository {
     return user.name;
   }
 
+  Future<String> getCurrentUsersSurname() async {
+    final currentUser = _auth.currentUser;
+    final uid = currentUser!.uid;
+    final user = await _users.doc(uid).get().then(
+            (value) => UserModel.fromMap(value.data() as Map<String, dynamic>));
+    return user.surname;
+  }
+
   Future<String> getCurrentUsersMail() async {
     final currentUser = _auth.currentUser;
     final uid = currentUser!.uid;
