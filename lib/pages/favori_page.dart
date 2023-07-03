@@ -20,8 +20,7 @@ class FavoriPage extends StatelessWidget {
         elevation: 2,
         leading: IconButton(
             onPressed: (){
-              Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => const ProfilePage()));
+              Navigator.of(context).pop();
             },
             icon: const Icon(Icons.arrow_back)),
       ),

@@ -6,11 +6,13 @@ import 'package:explore_nearby/pages/favori_page.dart';
 import 'package:explore_nearby/pages/events_page.dart';
 import 'package:explore_nearby/pages/home_page.dart';
 import 'package:explore_nearby/pages/conversations_page.dart';
-import 'package:explore_nearby/pages/mekan_page.dart';
+import 'package:explore_nearby/pages/PlaceInfoPage.dart';
+import 'package:explore_nearby/pages/map_page.dart';
 import 'package:explore_nearby/pages/profile_page.dart';
 import 'package:explore_nearby/pages/search_page.dart';
 import 'package:explore_nearby/screens/home_screen.dart';
 import 'package:explore_nearby/screens/register_screen.dart';
+import 'package:explore_nearby/screens/splashscreen.dart';
 import 'package:explore_nearby/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -35,12 +37,14 @@ class BasePage extends StatelessWidget {
         themeMode: ThemeMode.dark,
         debugShowCheckedModeBanner: false,
         title: "explore_nearby",
-        home: const HomeScreen(),
+        home: FirebaseAuth.instance.currentUser != null
+            ? const HomeScreen()
+            : const SplashScreen(),
         routes: {
           homepageRoute: (context) => const HomePage(),
           conversationspageRoute: (context) => const ConversationsPage(),
+          mappageRoute: (context) => const MapPage(),
           searchpageRoute: (context) => const SearchPage(),
-          mekanpageRoute: (context) => const MekanPage(),
           favoripageRoute: (context) => const FavoriPage(),
           eventspageRoute: (context) => const EventsPage(),
           profilepageRoute: (context) => const ProfilePage(),

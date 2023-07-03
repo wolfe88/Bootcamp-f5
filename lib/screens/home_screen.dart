@@ -13,23 +13,24 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
 import '../firebase/auth.dart';
-import '../pages/mekan_page.dart';
+import '../pages/PlaceInfoPage.dart';
+import '../pages/map_page.dart';
 import '../widgets/avatar.dart';
 
 // int pageIndex0 = 0;
 
 final pages = [
   const HomePage(),
-  const MekanPage(),
-  const FavoriPage(),
+  const MapPage(),
+  const SearchPage(),
   const ProfilePage(),
 ];
 
 final pageTitles = [
   "Home",
-  "Mekan Detay",
-  "Favoriler",
-  "Profil",
+  "Map Page",
+  "Search",
+  "Profile",
 ];
 
 final ValueNotifier<int> pageIndex = ValueNotifier(0);
@@ -106,15 +107,15 @@ class _BottomNavigationBarState extends State<_BottomNavigationBar> {
               isSelected: (selectedIndex == 0),
             ),
             _NavigationBarItem(
-              label: "Mekan Detay",
-              icon: CupertinoIcons.square_favorites,
+              label: "Map Page",
+              icon: Icons.map_outlined,
               route: 1,
               onTap: handleItemSelected,
               isSelected: (selectedIndex == 1),
             ),
             _NavigationBarItem(
-              label: "Favoriler",
-              icon: IconData(0xee9b, fontFamily: 'MaterialIcons'),
+              label: "Search",
+              icon: Icons.search_outlined,
               route: 2,
               onTap: handleItemSelected,
               isSelected: (selectedIndex == 2),

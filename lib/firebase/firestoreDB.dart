@@ -1,6 +1,7 @@
 // ignore_for_file: unused_import
 
 import 'package:explore_nearby/models/place_model.dart';
+import 'package:explore_nearby/widgets/mekan.card.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -66,6 +67,28 @@ class firestoreDB {
      catch (e) {
       print(e.toString() + " this is catch");
       return PlaceModel();
+    }
+  }
+
+
+  Future<List<PlaceModel>?> getNearbyPopularPlaces(city) async {
+    try {
+      final firestore = FirebaseFirestore.instance;
+      final queryRef = firestore.collection('places').where("city", isEqualTo: city);
+      await queryRef.get().then((value) => print(value.docs));
+      final List<PlaceModel> doc = await queryRef.get().then((value) => value.docs.map((doc) => PlaceModel.fromMap(doc.data())).toList());
+      print(doc[0].name);
+      return doc;
+      //
+      // if (doc.exists) {
+      //   return PlaceModel.fromMap(doc.data() as Map<String, dynamic>);
+      // } else {
+      //   return null;
+      // }
+    }
+    catch (e) {
+      print(e.toString() + " this is catch");
+      return null;
     }
   }
 
