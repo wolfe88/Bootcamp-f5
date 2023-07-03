@@ -15,11 +15,15 @@ class UserModel {
 
   UserModel copyWith({
     String? name,
+    String? surname,
+    String? bio,
     String? email,
     String? uid,
   }) {
     return UserModel(
       name: name ?? this.name,
+      surname: surname ?? this.surname,
+      bio: bio ?? this.bio,
       email: email ?? this.email,
       uid: uid ?? this.uid,
     );
@@ -40,6 +44,8 @@ class UserModel {
   factory UserModel.fromMap(Map<String, dynamic> map) {
     return UserModel(
       name: map['name'] ?? '',
+      surname: map['surname'] ?? '',
+      bio: map['bio'] ?? '',
       uid: map['uid'] ?? '',
       email: map['email'] ?? '',
     );
