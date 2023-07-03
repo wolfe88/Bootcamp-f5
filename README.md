@@ -54,7 +54,7 @@ ExploreNearby, turistlerin seyahat ederken gezebilecekleri yerler hakkında bilg
 ## Sprint Planning & Sprint Process
 - Sprint Notları: Sprint notları [product backlog](https://www.figma.com/file/QUQg0VWmtSZz1DRERvXCUH/Flowchart-%26-ToDo?type=whiteboard&node-id=0-1&t=UND6gCWeVwxV0eNq-0) içine yazılmıştır.
 - Sprint İçinde Tamamlanması Tahmin Edilen Puan: 250 Puan
-- Puan Tamamlama Tahmin Mantığı: Ekip olarak yaptığımız toplantılar sonucunda çıkardığımız iş listesinin toplam puanını 530 olarak belirlemiş bulunmaktayız. Bu sprintin yoğunluğumuza göre 250 puan olması gerektiği üzerine karar kıldık.
+- Puan Tamamlama Tahmin Mantığı: Ekip olarak yaptığımız toplantılar sonucunda çıkardığımız iş listesinin toplam puanını 530 olarak belirlemiş bulunmaktayız. Bu sprintin yoğunluğumuza göre 250 puan olması gerektiğine karar verdik.
 - Daily Scrum: Daily scrum toplantıları Discord üzerinden çevrimiçi görüşmeler ile yapılmıştır. Toplantı özetleri, notları ve ekran görüntülerinden bazıları [product backlog](https://www.figma.com/file/QUQg0VWmtSZz1DRERvXCUH/Flowchart-%26-ToDo?type=whiteboard&node-id=0-1&t=UND6gCWeVwxV0eNq-0) içine yazılmıştır.
 - Sprint Board Updates: ![image](https://github.com/wolfe88/Bootcamp-f5/assets/130304391/fba218e4-6877-4b19-b8cd-64f67b6aff94)
 
