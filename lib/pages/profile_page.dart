@@ -3,6 +3,7 @@ import 'package:explore_nearby/firebase/auth.dart';
 import 'package:explore_nearby/pages/favori_page.dart';
 import 'package:explore_nearby/screens/login_screen.dart';
 import 'package:flutter/material.dart';
+import '../firebase/firestoreDB.dart';
 import 'package:explore_nearby/yeni/mekan_card_detay.dart';
 import '../screens/home_screen.dart';
 import '../theme.dart';
@@ -26,6 +27,8 @@ class _ProfilePageState extends State<ProfilePage> {
   String _userName = '';
   String _userSurname = '';
   String _bio = '';
+
+  firestoreDB fireDB = firestoreDB();
 
   @override
   void initState() {
@@ -205,7 +208,9 @@ class _ProfilePageState extends State<ProfilePage> {
                             children: [
                               IconButton(
                                 icon: Image.asset("assets/images/anıtkabir.jpg"),
-                                onPressed: () { },
+                                onPressed: () async {
+                                 await fireDB.getPlaceFromID("bfMtis1g7XQz4V5Tss0H").then((value) => print(value?.name));
+                                },
                                 iconSize: 120,
                               ),
                               const Text(

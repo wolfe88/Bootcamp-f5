@@ -1,5 +1,6 @@
 // ignore_for_file: unused_import
 
+import 'package:explore_nearby/models/place_model.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -46,6 +47,48 @@ class firestoreDB {
     } catch (e) {
       print(e.toString() + " this is catch");
       return UserProfileModel();
+    }
+  }
+
+  Future<PlaceModel?> getPlaceFromID(placeID) async {
+    try {
+        final firestore = FirebaseFirestore.instance;
+        final docRef = firestore.collection('places').doc(placeID);
+
+        DocumentSnapshot doc = await docRef.get();
+
+        if (doc.exists) {
+          return PlaceModel.fromMap(doc.data() as Map<String, dynamic>);
+        } else {
+          return null;
+        }
+      }
+     catch (e) {
+      print(e.toString() + " this is catch");
+      return PlaceModel();
+    }
+  }
+
+  Future<PlaceModel>? getPlaceFromX(uid) async {
+    //this function isn't complete
+    try {
+      CollectionReference<Map<String, dynamic>> _users =
+      _firestore.collection('users');
+
+      QuerySnapshot<Map<String, dynamic>> querySnapshot =
+      await _users.where("uid", isEqualTo: uid).get();
+
+      if (querySnapshot.size > 0) {
+        print(querySnapshot.docs[0].data().toString() + "this is first");
+        var a = PlaceModel.fromMap(querySnapshot.docs[0].data());
+        print(a.toString());
+        return a;
+      } else {
+        return PlaceModel();
+      }
+    } catch (e) {
+      print(e.toString() + " this is catch");
+      return PlaceModel();
     }
   }
 }
