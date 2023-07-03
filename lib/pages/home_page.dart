@@ -1,18 +1,13 @@
-<<<<<<< HEAD
+import 'package:explore_nearby/pages/mekan_detay_page.dart';
 import 'package:explore_nearby/pages/search_page.dart';
-=======
-// ignore_for_file: unused_import
-
->>>>>>> 5a76ed51f85c603868fbcbd413a77f25b50e9fa6
 import 'package:explore_nearby/theme.dart';
 import 'package:explore_nearby/yeni/mekan_card_detay.dart';
+import 'package:explore_nearby/yeni/mekan_genel.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-
 import '../utilities/helpers.dart';
 import '../widgets/avatar.dart';
-import '../widgets/mekan.card.dart';
-import '../yeni/mekan_card_detay.dart';
+import '../widgets/mekan_card.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -108,7 +103,11 @@ class _Stories extends StatelessWidget {
                       ),
                       InkWell(
                         onTap: () {
-                          print("tıklandı");
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => MekanDetayPage()),
+                          );
                         },
                         child: Text(
                           "Hepsini gör",
@@ -123,6 +122,7 @@ class _Stories extends StatelessWidget {
                     padding: const EdgeInsets.only(left: 20),
                     child: Row(
                       children: mekanListesi
+                          .take(3)
                           .map((denememekan) => mekanCard(mekan: denememekan))
                           .toList(),
                     ),

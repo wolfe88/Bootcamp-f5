@@ -11,17 +11,19 @@ class UserModel {
   //connections collection and privateuserinfo collection
   //uncompleted
 
-  UserModel({this.comments =const {"":0},this.surname="",this.bio="", this.profile_picture="", this.preferences= const {"pref1":true}, required this.name, required this.uid, required this.email});
+  UserModel({this.comments =const {"":0},this.bio="", this.surname="", this.profile_picture="", this.preferences= const {"pref1":true}, required this.name, required this.uid, required this.email});
 
   UserModel copyWith({
     String? name,
     String? surname,
+    String? bio,
     String? email,
     String? uid,
   }) {
     return UserModel(
       name: name ?? this.name,
       surname: surname ?? this.surname,
+      bio: bio ?? this.bio,
       email: email ?? this.email,
       uid: uid ?? this.uid,
     );
@@ -30,6 +32,7 @@ class UserModel {
   Map<String, dynamic> toMap() {
     return {
       'name': name,
+      'surname': surname,
       'uid': uid,
       'email': email,
       'bio': bio,
@@ -41,6 +44,8 @@ class UserModel {
   factory UserModel.fromMap(Map<String, dynamic> map) {
     return UserModel(
       name: map['name'] ?? '',
+      surname: map['surname'] ?? '',
+      bio: map['bio'] ?? '',
       uid: map['uid'] ?? '',
       email: map['email'] ?? '',
     );

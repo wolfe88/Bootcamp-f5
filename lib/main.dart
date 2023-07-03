@@ -6,7 +6,8 @@ import 'package:explore_nearby/pages/favori_page.dart';
 import 'package:explore_nearby/pages/events_page.dart';
 import 'package:explore_nearby/pages/home_page.dart';
 import 'package:explore_nearby/pages/conversations_page.dart';
-import 'package:explore_nearby/pages/mekan_page.dart';
+import 'package:explore_nearby/pages/map_page.dart';
+import 'package:explore_nearby/pages/mekan_detay_page.dart';
 import 'package:explore_nearby/pages/profile_page.dart';
 import 'package:explore_nearby/pages/search_page.dart';
 import 'package:explore_nearby/screens/home_screen.dart';
@@ -40,10 +41,11 @@ class BasePage extends StatelessWidget {
           homepageRoute: (context) => const HomePage(),
           conversationspageRoute: (context) => const ConversationsPage(),
           searchpageRoute: (context) => const SearchPage(),
-          mekanpageRoute: (context) => const MekanPage(),
+          mekanpageRoute: (context) => const MapPage(),
           favoripageRoute: (context) => const FavoriPage(),
           eventspageRoute: (context) => const EventsPage(),
           profilepageRoute: (context) => const ProfilePage(),
+          mekandetaypageRoute: (context) => const MekanDetayPage(),
         });
   }
 }
