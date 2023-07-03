@@ -52,16 +52,21 @@ ExploreNearby, turistlerin seyahat ederken gezebilecekleri yerler hakkında bilg
 
 # Sprint 2
 ## Sprint Planning & Sprint Process
-- Sprint Notları: 
+- Sprint Notları: Sprint notları [product backlog](https://www.figma.com/file/QUQg0VWmtSZz1DRERvXCUH/Flowchart-%26-ToDo?type=whiteboard&node-id=0-1&t=UND6gCWeVwxV0eNq-0) içine yazılmıştır.
 - Sprint İçinde Tamamlanması Tahmin Edilen Puan:
-- Puan Tamamlama Tahmin Mantığı:
-- Daily Scrum: 
-- Sprint Board Updates:
+- Puan Tamamlama Tahmin Mantığı: Ekip olarak yaptığımız toplantılar sonucunda çıkardığımız iş listesinin toplam puanını 530 olarak belirlemiş bulunmaktayız. Bu sprintte
+- Daily Scrum: Daily scrum toplantıları Discord üzerinden çevrimiçi görüşmeler ile yapılmıştır. Toplantı özetleri, notları ve ekran görüntülerinden bazıları [product backlog](https://www.figma.com/file/QUQg0VWmtSZz1DRERvXCUH/Flowchart-%26-ToDo?type=whiteboard&node-id=0-1&t=UND6gCWeVwxV0eNq-0) içine yazılmıştır.
+- Sprint Board Updates: ![image](https://github.com/wolfe88/Bootcamp-f5/assets/130304391/97796993-ae88-45fb-a733-90273eaf04ce)
+
 ## Sprint Review & Sprint Retrospective
-- Ürün Durumu:
-- Ekran Görüntüleri: 
-- Sprint Review:
-- Sprint Retrospective: 
+- Ürün Durumu: Ekran Görüntüleri: ![image](https://github.com/wolfe88/Bootcamp-f5/assets/130304391/2c2e01b1-98dc-4a78-8820-92663865433b)
+![image](https://github.com/wolfe88/Bootcamp-f5/assets/130304391/64f00ef7-d378-473c-8054-a157ab52a2ef)
+![image](https://github.com/wolfe88/Bootcamp-f5/assets/130304391/9f89fd1e-8491-4a7f-9ee5-1d1190112e2d)
+![image](https://github.com/wolfe88/Bootcamp-f5/assets/130304391/2b3ce6ed-93ae-4d77-8fc0-0ec3b4b3aa40)
+![Uploading image.png…]()
+- Sprint Review: Alınan Kararlar: biten pagelerdeki eksiklikler ve kalan pageler tamamlanacak. Sprint Review Katılımcıları: Feyza Afra Taşkın, Yunus Emre Hançer, Gülsüm Rüyanur Bozdemir, Ömer Yılmaz, Yahya Helvacıoğlu
+- Sprint Retrospective:
+Katılımcıların aktifliğini arttırması üzerine çaışılacak.
 
 # Sprint 3
 ## Sprint Planning & Sprint Process
