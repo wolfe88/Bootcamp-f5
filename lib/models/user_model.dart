@@ -15,15 +15,21 @@ class UserModel {
 
   UserModel copyWith({
     String? name,
+<<<<<<< HEAD
     String? surname,
     String? bio,
+=======
+>>>>>>> 2aa5de60e4525e02bcd6bea9e8302ad89490be48
     String? email,
     String? uid,
   }) {
     return UserModel(
       name: name ?? this.name,
+<<<<<<< HEAD
       surname: surname ?? this.surname,
       bio: bio ?? this.bio,
+=======
+>>>>>>> 2aa5de60e4525e02bcd6bea9e8302ad89490be48
       email: email ?? this.email,
       uid: uid ?? this.uid,
     );

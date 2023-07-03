@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2aa5de60e4525e02bcd6bea9e8302ad89490be48
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -66,6 +70,7 @@ class _RegisterState extends State<Register> {
         child: Form(
           child: Center(
               child: Form(
+<<<<<<< HEAD
                 key: _formKey,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -80,60 +85,103 @@ class _RegisterState extends State<Register> {
                       validator: (value) {
                         if (value == null || value.isEmpty) {
                           return 'enter valid name';
+=======
+            key: _formKey,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const SizedBox(height: 30),
+                TextFormField(
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
+                  enableSuggestions: true,
+                  decoration: const InputDecoration(
+                    labelText: 'Name',
+                  ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'enter valid name';
+                    }
+                    return null;
+                  },
+                  onSaved: nameChange,
+                  autocorrect: true,
+                  keyboardType: TextInputType.emailAddress,
+                ),
+                const SizedBox(height: 30),
+                TextFormField(
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
+                  enableSuggestions: true,
+                  decoration: const InputDecoration(
+                    labelText: 'Surname',
+                  ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'enter valid name';
+                    }
+                    return null;
+                  },
+                  onSaved: nameChange,
+                  autocorrect: true,
+                  keyboardType: TextInputType.emailAddress,
+                ),
+                const SizedBox(height: 30),
+                TextFormField(
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
+                  enableSuggestions: true,
+                  decoration: const InputDecoration(
+                    labelText: 'Email',
+                  ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'enter valid email';
+                    }
+                    return null;
+                  },
+                  onSaved: emailChange,
+                  autocorrect: true,
+                  keyboardType: TextInputType.emailAddress,
+                ),
+                const SizedBox(height: 30),
+                TextFormField(
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
+                  enableSuggestions: false,
+                  obscureText: true,
+                  decoration: const InputDecoration(
+                    labelText: 'Password',
+                  ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Enter valid password';
+                    }
+                    return null;
+                  },
+                  onSaved: passChange,
+                  autocorrect: false,
+                  keyboardType: TextInputType.text,
+                ),
+                const SizedBox(height: 30),
+                Container(
+                  width: double.infinity,
+                  child: Container(
+                    margin: const EdgeInsets.only(right: 100, left: 100),
+                    child: ElevatedButton(
+                      onPressed: () async {
+                        if (_formKey.currentState!.validate()) {
+                          _formKey.currentState!.save();
+                          final res = await _auth.createUser(
+                              name, email, password, surname, context);
+
+                          if (context.mounted) {
+                            if (res != null) {
+                              Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const Login()),
+                              );
+                            }
+                          }
+>>>>>>> 2aa5de60e4525e02bcd6bea9e8302ad89490be48
                         }
-                        return null;
-                      },
-                      onSaved: nameChange,
-                      autocorrect: true,
-                      keyboardType: TextInputType.emailAddress,
-                    ),
-                    const SizedBox(height: 30),
-                    TextFormField(
-                      autovalidateMode: AutovalidateMode.onUserInteraction,
-                      enableSuggestions: true,
-                      decoration: const InputDecoration(
-                        labelText: 'Surname',
-                      ),
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'enter valid name';
-                        }
-                        return null;
-                      },
-                      onSaved: nameChange,
-                      autocorrect: true,
-                      keyboardType: TextInputType.emailAddress,
-                    ),
-                    const SizedBox(height: 30),
-                    TextFormField(
-                      autovalidateMode: AutovalidateMode.onUserInteraction,
-                      enableSuggestions: true,
-                      decoration: const InputDecoration(
-                        labelText: 'Email',
-                      ),
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'enter valid email';
-                        }
-                        return null;
-                      },
-                      onSaved: emailChange,
-                      autocorrect: true,
-                      keyboardType: TextInputType.emailAddress,
-                    ),
-                    const SizedBox(height: 30),
-                    TextFormField(
-                      autovalidateMode: AutovalidateMode.onUserInteraction,
-                      enableSuggestions: false,
-                      obscureText: true,
-                      decoration: const InputDecoration(
-                        labelText: 'Password',
-                      ),
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Enter valid password';
-                        }
-                        return null;
                       },
                       onSaved: passChange,
                       autocorrect: false,
@@ -166,19 +214,130 @@ class _RegisterState extends State<Register> {
                             'Register',
                             style:
                             GoogleFonts.viga(color: Colors.white, fontSize: 20),
-                          ),
-                        ),
                       ),
                     ),
                   ],
+<<<<<<< HEAD
                 ),
               )),
+=======
+            key: _formKey,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const SizedBox(height: 30),
+                TextFormField(
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
+                  enableSuggestions: true,
+                  decoration: const InputDecoration(
+                    labelText: 'Name',
+                  ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'enter valid name';
+                    }
+                    return null;
+                  },
+                  onSaved: nameChange,
+                  autocorrect: true,
+                  keyboardType: TextInputType.emailAddress,
+                ),
+                const SizedBox(height: 30),
+                TextFormField(
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
+                  enableSuggestions: true,
+                  decoration: const InputDecoration(
+                    labelText: 'Surname',
+                  ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'enter valid name';
+                    }
+                    return null;
+                  },
+                  onSaved: nameChange,
+                  autocorrect: true,
+                  keyboardType: TextInputType.emailAddress,
+                ),
+                const SizedBox(height: 30),
+                TextFormField(
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
+                  enableSuggestions: true,
+                  decoration: const InputDecoration(
+                    labelText: 'Email',
+                  ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'enter valid email';
+                    }
+                    return null;
+                  },
+                  onSaved: emailChange,
+                  autocorrect: true,
+                  keyboardType: TextInputType.emailAddress,
+                ),
+                const SizedBox(height: 30),
+                TextFormField(
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
+                  enableSuggestions: false,
+                  obscureText: true,
+                  decoration: const InputDecoration(
+                    labelText: 'Password',
+                  ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Enter valid password';
+                    }
+                    return null;
+                  },
+                  onSaved: passChange,
+                  autocorrect: false,
+                  keyboardType: TextInputType.text,
+                ),
+                const SizedBox(height: 30),
+                Container(
+                  width: double.infinity,
+                  child: Container(
+                    margin: const EdgeInsets.only(right: 100, left: 100),
+                    child: ElevatedButton(
+                      onPressed: () async {
+                        if (_formKey.currentState!.validate()) {
+                          _formKey.currentState!.save();
+                          final res = await _auth.createUser(
+                              name, email, password, surname, context);
+
+                          if (context.mounted) {
+                            if (res != null) {
+                              Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const Login()),
+                              );
+                            }
+                          }
+                        }
+                      },
+                      child: Text(
+                        'Register',
+                        style:
+                            GoogleFonts.viga(color: Colors.white, fontSize: 20),
+                      ),
+                    ),
+                  ),
+                ),
+                  ),
+                ),
+              ],
+            ),
+          )),
+>>>>>>> 2aa5de60e4525e02bcd6bea9e8302ad89490be48
         ),
       ),
     );
   }
 }
 Future<String> firestoreValidator(String username) async {
+  // ignore: unused_local_variable
   var nicksCollection = FirebaseFirestore.instance.collection('nick_uid');
 
   return "a";

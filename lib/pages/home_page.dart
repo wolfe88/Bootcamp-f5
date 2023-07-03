@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 import 'package:explore_nearby/pages/mekan_detay_page.dart';
+=======
+>>>>>>> 2aa5de60e4525e02bcd6bea9e8302ad89490be48
 import 'package:explore_nearby/pages/search_page.dart';
 import 'package:explore_nearby/theme.dart';
 import 'package:explore_nearby/yeni/mekan_card_detay.dart';
