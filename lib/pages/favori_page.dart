@@ -2,7 +2,7 @@ import 'package:explore_nearby/pages/profile_page.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/fav_place_card.dart';
-import '../yeni/mekan_card_detay.dart';
+import '../yeni/mekan_genel.dart';
 
 class FavoriPage extends StatelessWidget {
   const FavoriPage({super.key});
