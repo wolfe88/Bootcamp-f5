@@ -31,6 +31,11 @@ ExploreNearby, turistlerin seyahat ederken gezebilecekleri yerler hakkında bilg
 - Yaşadıkları şehri keşfetmek isteyenler
 - Turistik mekan sahipleri
 
+## Juriye Not
+- Uygulamamızda search screen bulunmasına rağmen arama yapma kısmını aktifleştiremedik.
+- Profil düzenleme ekranına geçişi sağlayamadık.
+- Konumları haritada gösterme üzerine ayarlama yapamadık.
+
 # Sprint 1
 ## Sprint Planning & Sprint Process
 - Sprint Notları: Sprint notları [product backlog](https://www.figma.com/file/QUQg0VWmtSZz1DRERvXCUH/Flowchart-%26-ToDo?type=whiteboard&node-id=0-1&t=UND6gCWeVwxV0eNq-0) içine yazılmıştır.
