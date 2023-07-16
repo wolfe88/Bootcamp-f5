@@ -7,6 +7,7 @@ import 'package:gap/gap.dart';
 import '../utilities/helpers.dart';
 import '../widgets/avatar.dart';
 import '../widgets/mekan_card.dart';
+import 'mekan_detay_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});

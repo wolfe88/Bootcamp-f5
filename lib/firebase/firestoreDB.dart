@@ -69,6 +69,28 @@ class firestoreDB {
     }
   }
 
+
+  Future<List<PlaceModel>?> getNearbyPopularPlaces(city) async {
+    try {
+      final firestore = FirebaseFirestore.instance;
+      final queryRef = firestore.collection('places').where("city", isEqualTo: city);
+      await queryRef.get().then((value) => print(value.docs));
+      final List<PlaceModel> doc = await queryRef.get().then((value) => value.docs.map((doc) => PlaceModel.fromMap(doc.data())).toList());
+      print(doc[0].name);
+      return doc;
+
+      // if (doc.exists) {
+      //   return PlaceModel.fromMap(doc.data() as Map<String, dynamic>);
+      // } else {
+      //   return null;
+      // }
+    }
+    catch (e) {
+      print(e.toString() + " this is catch");
+      return null;
+    }
+  }
+
   Future<PlaceModel>? getPlaceFromX(uid) async {
     //this function isn't complete
     try {
