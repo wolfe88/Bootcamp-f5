@@ -36,8 +36,8 @@ class _LoginState extends State<Login> {
         automaticallyImplyLeading: false,
         centerTitle: true,
         title: Text(
-          'MeetUp',
-          style: GoogleFonts.viga(color: Colors.white, fontSize: 30),
+          'Explore Nearby',
+          style: GoogleFonts.poppins(color: Colors.black, fontSize: 30),
         ),
       ),
       body: Padding(
@@ -50,36 +50,54 @@ class _LoginState extends State<Login> {
                 children: [
                   Text(
                     'Sign in',
-                    style: GoogleFonts.viga(fontSize: 20),
+                    style: GoogleFonts.poppins(fontSize: 30),
                   ),
                   const SizedBox(height: 20),
                   TextFormField(
-                    decoration: const InputDecoration(labelText: 'Email'),
+                    decoration: InputDecoration(
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.transparent),
+                        borderRadius: BorderRadius.circular(5.5),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.transparent),
+                        borderRadius: BorderRadius.circular(5.5),
+                      ),
+                      prefixIcon: Icon(Icons.person, color: Colors.blue, size: 36),
+                      hintText: "Email",
+                      hintStyle: TextStyle(color: Colors.blue),
+                      filled: true,
+                      fillColor: Colors.blue[50],
+                    ),
                     cursorColor: const Color(0XFF01579B),
                     autovalidateMode: AutovalidateMode.onUserInteraction,
                     enableSuggestions: true,
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'Enter an email';
-                      }
-                      return null;
-                    },
                     onSaved: emailChange,
                     autocorrect: true,
                     keyboardType: TextInputType.emailAddress,
                   ),
+                  SizedBox(height: 20,),
                   TextFormField(
-                    decoration: const InputDecoration(labelText: 'Password'),
+                    decoration: InputDecoration(
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.transparent),
+                        borderRadius: BorderRadius.circular(5.5),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.transparent),
+                        borderRadius: BorderRadius.circular(5.5),
+                      ),
+                      prefixIcon: Icon(Icons.lock, color: Colors.blue, size: 36),
+                      hintText: "Password",
+                      hintStyle: TextStyle(color: Colors.blue),
+                      filled: true,
+                      fillColor: Colors.blue[50],
+                    ),
                     cursorColor: Colors.lightBlueAccent,
                     autovalidateMode: AutovalidateMode.onUserInteraction,
                     enableSuggestions: false,
                     obscureText: true,
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'Enter a Password';
-                      }
-                      return null;
-                    },
+
                     onSaved: passChange,
                     autocorrect: false,
                     keyboardType: TextInputType.text,
@@ -132,7 +150,7 @@ class _LoginState extends State<Login> {
                         child: Text(
                           'Sign In',
                           style:
-                          GoogleFonts.viga(color: Colors.white, fontSize: 20),
+                          GoogleFonts.poppins(color: Colors.white, fontSize: 25),
                         ),
                       ),
                     ),

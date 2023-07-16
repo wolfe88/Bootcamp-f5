@@ -21,14 +21,12 @@ import '../widgets/avatar.dart';
 final pages = [
   const HomePage(),
   const MapPage(),
-  const SearchPage(),
   const ProfilePage(),
 ];
 
 final pageTitles = [
   "Home",
   "Harita",
-  "Arama",
   "Profil",
 ];
 
@@ -113,18 +111,11 @@ class _BottomNavigationBarState extends State<_BottomNavigationBar> {
               isSelected: (selectedIndex == 1),
             ),
             _NavigationBarItem(
-              label: "Arama",
-              icon: CupertinoIcons.search,
+              label: "Profil",
+              icon: CupertinoIcons.person,
               route: 2,
               onTap: handleItemSelected,
               isSelected: (selectedIndex == 2),
-            ),
-            _NavigationBarItem(
-              label: "Profil",
-              icon: CupertinoIcons.person,
-              route: 3,
-              onTap: handleItemSelected,
-              isSelected: (selectedIndex == 3),
             ),
           ],
         ));
