@@ -12,6 +12,7 @@ import 'package:explore_nearby/pages/profile_page.dart';
 import 'package:explore_nearby/pages/search_page.dart';
 import 'package:explore_nearby/screens/home_screen.dart';
 import 'package:explore_nearby/screens/register_screen.dart';
+import 'package:explore_nearby/screens/splash_screen.dart';
 import 'package:explore_nearby/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -36,7 +37,9 @@ class BasePage extends StatelessWidget {
         themeMode: ThemeMode.dark,
         debugShowCheckedModeBanner: false,
         title: "explore_nearby",
-        home: const HomeScreen(),
+        home: FirebaseAuth.instance.currentUser != null
+            ? const HomeScreen()
+            : const SplashScreen(),
         routes: {
           homepageRoute: (context) => const HomePage(),
           conversationspageRoute: (context) => const ConversationsPage(),
