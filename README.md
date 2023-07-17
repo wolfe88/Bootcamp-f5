@@ -68,7 +68,7 @@ ExploreNearby, turistlerin seyahat ederken gezebilecekleri yerler hakkında bilg
 - Ürün Durumu: Ekran Görüntüleri: ![image](https://github.com/wolfe88/Bootcamp-f5/assets/130304391/2c2e01b1-98dc-4a78-8820-92663865433b)
 ![image](https://github.com/wolfe88/Bootcamp-f5/assets/130304391/64f00ef7-d378-473c-8054-a157ab52a2ef)
 ![image](https://github.com/wolfe88/Bootcamp-f5/assets/130304391/9f89fd1e-8491-4a7f-9ee5-1d1190112e2d)
-![image](https://github.com/wolfe88/Bootcamp-f5/assets/130304391/69f2b3cf-129b-404f-a6fd-3963fdc49ffd)
+![image](https://github.com/wolfe88/Bootcamp-f5/assets/130304391/7c6fcb63-3928-41ec-aa35-0cecaf25c6a6)
 - Sprint Review: Alınan Kararlar: Biten pagelerdeki eksiklikler ve kalan pageler tamamlanacak. Sprint Review Katılımcıları: Feyza Afra Taşkın, Yunus Emre Hançer, Gülsüm Rüyanur Bozdemir, Ömer Yılmaz, Yahya Helvacıoğlu
 - Sprint Retrospective:
 Katılımcıların aktifliğini arttırması üzerine çaışılacak.
