@@ -80,7 +80,8 @@ Katılımcıların aktifliğini arttırması üzerine çaışılacak.
 - Sprint İçinde Tamamlanması Tahmin Edilen Puan: 180
 - Puan Tamamlama Tahmin Mantığı: Ekip olarak yaptığımız toplantılar sonucunda çıkardığımız iş listesinin toplam puanını 550 olarak belirlemiş bulunmaktayız. Bu sprintte kalan son 180 puanımızı tamamlamayı hedeflemiştik fakat son sprintimizi yeteri kadar verimli geçiremedik ve sadece 55 puanlık kısmı tamamen bitirip 25 puanlık kısımda bazı görevlerle ilgilenebildik. Geri kalan 120 puanlık kısımda görevlerimizi maalesef bitiremedik.
 - Daily Scrum: Daily scrum toplantıları Discord üzerinden çevrimiçi görüşmeler ile yapılmıştır. Toplantı özetleri, notları ve ekran görüntülerinden bazıları [product backlog](https://www.figma.com/file/QUQg0VWmtSZz1DRERvXCUH/Flowchart-%26-ToDo?type=whiteboard&node-id=0-1&t=UND6gCWeVwxV0eNq-0) içine yazılmıştır.
-- Sprint Board Updates: ![image](https://github.com/wolfe88/Bootcamp-f5/assets/130304391/56646205-855e-4f25-aa68-050a5a6639f0)
+- Sprint Board Updates: ![image](https://github.com/wolfe88/Bootcamp-f5/assets/130304391/4e9801a1-053c-4729-882e-c89c6b689c28)
+
 
 ## Sprint Review & Sprint Retrospective
 - Ürün Durumu: Ekran Görüntüleri: ![image](https://github.com/wolfe88/Bootcamp-f5/assets/130304391/7b8ae90a-f727-45a5-9969-83f48268417c)
